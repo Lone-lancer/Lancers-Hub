@@ -1,26 +1,23 @@
 import { APICore } from './apiCore';
 
 const api = new APICore();
+const baseURL = "https://lancers-hub.onrender.com/api/auth"; // Backend API base URL
 
 // account
 function login(params: { email: string; password: string }) {
-    const baseUrl = '/login/';
-    return api.create(`${baseUrl}`, params);
+    return api.create(`${baseURL}/login`, params);
 }
 
 function logout() {
-    const baseUrl = '/logout/';
-    return api.create(`${baseUrl}`, {});
+    return api.create(`${baseURL}/logout`, {});
 }
 
 function signup(params: { fullname: string; email: string; password: string }) {
-    const baseUrl = '/register/';
-    return api.create(`${baseUrl}`, params);
+    return api.create(`${baseURL}/register`, params);
 }
 
 function forgotPassword(params: { email: string }) {
-    const baseUrl = '/forget-password/';
-    return api.create(`${baseUrl}`, params);
+    return api.create(`${baseURL}/forget-password`, params);
 }
 
 export { login, logout, signup, forgotPassword };
