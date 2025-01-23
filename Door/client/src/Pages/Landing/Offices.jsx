@@ -73,7 +73,7 @@ const Offices = () => {
                       </div>
                       <p className="eventsBlock__text">{events.description}</p>
                       <button
-                        onClick={() => navigate("/purchase")}
+                        onClick={() => (window.location.href = "/purchase")}
                         className="eventsBlock__detailsLink"
                       >
                         Rent office
