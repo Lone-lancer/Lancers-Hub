@@ -1,0 +1,9 @@
+
+// Main styles
+@use "variables" as *;
+@use "./app.scss";
+@use "./icons.scss";
+
+// Styles
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
