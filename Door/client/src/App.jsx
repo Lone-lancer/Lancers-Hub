@@ -75,7 +75,7 @@ const App = () => {
           }
         />
         <Route
-          path="/Purchase"
+          path="/purchase"
           element={
             <Suspense fallback={loading()}>
               <Purchase />
