@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-
+import config from "../../config";
 // actions
 import { showRightSidebar } from "../../redux/actions";
 
@@ -39,7 +39,7 @@ const AdminTopbar = ({ openLeftMenuCallBack, containerClass }) => {
 
   const fetchProfile = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/auth/profile", {
+      const response = await fetch(`${config.API_URL}/api/auth/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

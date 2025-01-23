@@ -13,6 +13,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import config from "../../config";
 
 const ManagerRole = () => {
   const [page, setPage] = useState(0);
@@ -22,7 +23,7 @@ const ManagerRole = () => {
   const fetchTeamMembers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/manager/team-members",
+        `${config.API_URL}/api/manager/team-members`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,7 +51,7 @@ const ManagerRole = () => {
   const handleRoleChange = async (memberId, newRole) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/manager/team-members/${memberId}/role`,
+        `${config.API_URL}/api/manager/team-members/${memberId}/role`,
         {
           method: "PUT",
           headers: {

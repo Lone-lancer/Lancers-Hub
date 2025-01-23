@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { FaSpinner } from "react-icons/fa"; // Import a React Icon spinner
-
+import config from "../config";
 const RefreshLayout = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ const RefreshLayout = () => {
 
         // Validate the access token with the backend
         const validateResponse = await fetch(
-          "http://localhost:4000/api/auth/validate/token",
+          `${config.API_URL}/api/auth/validate/token`,
           {
             method: "POST",
             headers: {
@@ -34,7 +34,7 @@ const RefreshLayout = () => {
         if (!validateResponse.ok) {
           // If token is invalid, attempt to refresh it
           const refreshResponse = await fetch(
-            "http://localhost:4000/api/auth/refresh/token",
+            `${config.API_URL}/api/auth/refresh/token`,
             {
               method: "POST",
               headers: {

@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import { Check, Close, Edit } from "@mui/icons-material";
 import DataTable from "react-data-table-component";
-
+import config from "../../config";
 const AdminManager = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -40,7 +40,7 @@ const AdminManager = () => {
 
   const fetchOffices = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/offices");
+      const response = await fetch(`${config.API_URL}/api/offices`);
       const data = await response.json();
       console.log(data.offices);
       const formattedOffices = data?.offices?.map((office) => ({
@@ -94,7 +94,7 @@ const AdminManager = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:4000/api/offices/${currentOfficeId}/manager`,
+        `${config.API_URL}/api/offices/${currentOfficeId}/manager`,
         {
           method: "PUT",
           headers: {

@@ -19,6 +19,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { Check, Close, Download } from "@mui/icons-material";
+import config from "../../config";
 
 const TeamLeaderTeam = () => {
   const [page, setPage] = useState(0);
@@ -31,7 +32,7 @@ const TeamLeaderTeam = () => {
   const fetchTeamMembers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/manager/team-members",
+        `${config.API_URL}/api/manager/team-members`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -70,7 +71,7 @@ const TeamLeaderTeam = () => {
   const handleActivate = async (memberId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/manager/team-members/${memberId}`,
+        `${config.API_URL}/api/manager/team-members/${memberId}`,
         {
           method: "PUT",
           headers: {
@@ -91,7 +92,7 @@ const TeamLeaderTeam = () => {
   const handleDeactivate = async (memberId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/manager/team-members/${memberId}`,
+        `${config.API_URL}/api/manager/team-members/${memberId}`,
         {
           method: "PUT",
           headers: {
@@ -161,7 +162,7 @@ const TeamLeaderTeam = () => {
                     <TableCell>{member.joinDate}</TableCell>
                     <TableCell>
                       <a
-                        href={`http://localhost:4000/api/manager/download/${member.cv}`}
+                        href={`${config.API_URL}/api/manager/download/${member.cv}`}
                         download={member.cv}
                         target="_blank"
                       >

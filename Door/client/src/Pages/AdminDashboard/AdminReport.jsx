@@ -5,6 +5,7 @@ import "jspdf-autotable";
 import { saveAs } from "file-saver";
 import { Button, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import config from "../../config";
 
 const AdminReport = () => {
   const [reportData, setReportData] = useState({
@@ -22,7 +23,7 @@ const AdminReport = () => {
 
   const fetchReportData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/offices/stats");
+      const response = await fetch(`${config.API_URL}/api/offices/stats`);
       const data = await response.json();
       setReportData(data);
     } catch (error) {

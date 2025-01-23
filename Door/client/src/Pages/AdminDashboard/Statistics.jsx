@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import config from "../../config";
 
 // component
 import StatisticsWidget1 from "../../Components/Dashboard/StatisticsWidget1";
@@ -17,7 +18,7 @@ const Statistics = () => {
 
   const fetchOfficeStats = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/offices/stats");
+      const response = await fetch(`${config.API_URL}/api/offices/stats`);
       const data = await response.json();
       setOfficeStats(data);
     } catch (error) {

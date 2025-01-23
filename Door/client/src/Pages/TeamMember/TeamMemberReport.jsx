@@ -3,6 +3,7 @@ import DataTable from "react-data-table-component";
 import { Button } from "react-bootstrap";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import config from "../../config";
 
 const TeamMemberReport = () => {
   const [teamStats, setTeamStats] = useState({
@@ -23,7 +24,7 @@ const TeamMemberReport = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:4000/api/manager/team-stats",
+          `${config.API_URL}/api/manager/team-stats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

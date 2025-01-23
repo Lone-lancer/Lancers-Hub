@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
+import config from "../config";
 
 import Adam from "../assets/images/Adam_login.png";
 import Ash from "../assets/images/Ash_login.png";
@@ -77,7 +78,7 @@ const Purchase = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:4000/api/payment/pay", {
+      const response = await fetch(`${config.API_URL}/api/payment/pay`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

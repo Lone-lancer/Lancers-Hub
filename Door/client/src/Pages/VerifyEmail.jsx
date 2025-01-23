@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import config from "../config";
 
 const VerifyEmail = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const VerifyEmail = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/verify/email",
+        `${config.API_URL}/api/auth/verify/email`,
         {
           method: "POST",
           headers: {

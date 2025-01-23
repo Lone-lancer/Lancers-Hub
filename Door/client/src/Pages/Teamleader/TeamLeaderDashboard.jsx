@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import StatisticsWidget2 from "../../Components/Dashboard/StatisticsWidget2";
-
+import config from "../../config";
 const TeamLeaderDashboard = () => {
   const [teamStats, setTeamStats] = useState({
     totalMembers: 0,
@@ -20,7 +20,7 @@ const TeamLeaderDashboard = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:4000/api/manager/team-stats",
+          `${config.API_URL}/api/manager/team-stats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

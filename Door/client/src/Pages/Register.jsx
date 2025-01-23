@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import config from "../config";
 import Adam from "../assets/images/Adam_login.png";
 import Ash from "../assets/images/Ash_login.png";
 import Lucy from "../assets/images/Lucy_login.png";
@@ -58,7 +58,7 @@ const Register = () => {
         formDataToSend.append(key, formData[key]); // Append each field to FormData
       });
       
-      const response = await fetch("http://localhost:4000/api/auth/register", {
+      const response = await fetch(`${config.API_URL}/api/auth/register`, {
         method: "POST",
         body: formDataToSend, // Send FormData instead of JSON
       });
@@ -87,7 +87,7 @@ const Register = () => {
       if (formData.roomId) {
         try {
           const response = await fetch(
-            `http://localhost:4000/api/offices/positions/${formData.roomId}`
+            `${config.API_URL}/api/offices/positions/${formData.roomId}`
           );
           const data = await response.json();
 

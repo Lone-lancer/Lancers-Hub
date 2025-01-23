@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Card, Col, Row, Dropdown } from "react-bootstrap";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { format } from "date-fns";
+import config from "../../config";
 
 // Add at the top of your file
-const API_URL = "http://localhost:4000/api";
+const API_URL = `${config.API_URL}/api`;
 
 // Add these new constants after PRIORITIES
 const PRIORITIES = {
@@ -96,7 +97,7 @@ const TeamMemberTask = () => {
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/auth/profile`, {
+        const response = await fetch(`${config.API_URL}/api/auth/profile`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

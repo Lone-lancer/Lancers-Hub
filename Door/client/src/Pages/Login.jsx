@@ -4,6 +4,7 @@ import Footer from "../Components/Landing/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import config from "../config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/auth/login", {
+      const response = await fetch(`${config.API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

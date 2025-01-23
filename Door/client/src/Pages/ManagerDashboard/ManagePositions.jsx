@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaTrash } from "react-icons/fa";
+import config from "../../config";
 
 const ManagePositions = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const ManagePositions = () => {
     try {
       const token = getToken();
       const response = await fetch(
-        "http://localhost:4000/api/manager/positions",
+        `${config.API_URL}/api/manager/positions`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -55,7 +56,7 @@ const ManagePositions = () => {
     try {
       const token = getToken();
       const response = await fetch(
-        "http://localhost:4000/api/manager/positions",
+        `${config.API_URL}/api/manager/positions`,
         {
           method: "POST",
           headers: {
@@ -88,7 +89,7 @@ const ManagePositions = () => {
     try {
       const token = getToken();
       const response = await fetch(
-        `http://localhost:4000/api/manager/positions/${id}`,
+        `${config.API_URL}/api/manager/positions/${id}`,
         {
           method: "DELETE",
           headers: {

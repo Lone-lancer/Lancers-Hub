@@ -3,8 +3,7 @@ import axios from "axios";
 
 // content type
 axios.defaults.headers.post["Content-Type"] = "application/json";
-axios.defaults.baseURL =
-  import.meta.env.VITE_API_URL || "http://localhost:4000";
+axios.defaults.baseURL = config.API_URL;
 
 // intercepting to capture errors
 axios.interceptors.response.use(
