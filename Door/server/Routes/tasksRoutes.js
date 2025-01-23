@@ -5,8 +5,8 @@ const {
   createTask,
   updateTaskStatus,
   updateTaskAssignee,
-} = require("../controllers/tasksController");
-const tokenParser = require("../utils/tokenParser");
+} = require("../Controllers/tasksController");
+const tokenParser = require("../Utils/tokenParser");
 
 // Get all tasks
 router.get("/", tokenParser, getAllTasks);

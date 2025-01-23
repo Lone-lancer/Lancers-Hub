@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const { register, login, profile } = require("../controllers/authController");
-const tokenParser = require("../utils/tokenParser");
+const { register, login, profile } = require("../Controllers/authController");
+const tokenParser = require("../Utils/tokenParser");
 const { verifyOtp } = require("../middleware/verification");
 const {
   db,

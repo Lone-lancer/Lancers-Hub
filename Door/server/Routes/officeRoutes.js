@@ -5,7 +5,7 @@ const {
   updateOfficeStatus,
   getOfficeStats,
   updateOfficeManager,
-} = require("../controllers/officeController");
+} = require("../Controllers/officeController");
 
 const {
   db,

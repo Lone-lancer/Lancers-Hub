@@ -5,7 +5,7 @@ const {
   updateTeamMemberStatus,
   updateTeamMemberRole,
 } = require("../Controllers/managerDashboardController");
-const tokenParser = require("../utils/tokenParser");
+const tokenParser = require("../Utils/tokenParser");
 const router = express.Router();
 const {
   db,
