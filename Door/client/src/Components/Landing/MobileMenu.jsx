@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/List";
+import { Link } from "react-router-dom";
 
 const menus = [
   {
@@ -26,10 +26,37 @@ const MobileMenu = () => {
   };
 
   return (
-    <ul className="main_menu_list clearfix">
+    <ul
+      style={{
+        listStyle: "none", // Remove bullet points
+        padding: "20px", // Add padding around the menu
+        margin: "0", // Remove default margin
+        backgroundColor: "#333", // Dark background for visibility
+        color: "#fff", // White text
+        height: "100vh", // Full height of the screen
+        overflowY: "auto", // Scrollable if content exceeds height
+      }}
+    >
       {menus.map((item, mn) => (
-        <ListItem key={mn}>
-          <Link onClick={ClickHandler} to={item.link}>
+        <ListItem
+          key={mn}
+          style={{
+            padding: "15px 0", // Add space between items
+            borderBottom: "1px solid rgba(255, 255, 255, 0.2)", // Subtle separator
+          }}
+        >
+          <Link
+            onClick={ClickHandler}
+            to={item.link}
+            style={{
+              color: "#fff", // White text
+              textDecoration: "none", // Remove underline
+              fontSize: "16px", // Font size for readability
+              fontWeight: "bold", // Bold text
+              display: "block", // Make the link occupy full width
+              transition: "color 0.3s ease", // Smooth hover effect
+            }}
+          >
             {item.title}
           </Link>
         </ListItem>
