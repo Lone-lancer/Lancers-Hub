@@ -29,7 +29,7 @@ app.use(
 app.use(
   cors({
     origin: "https://lancers-hub.vercel.app", // Allow requests from your frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "PATCH" , "DELETE"],
     credentials: true,
   })
 );
