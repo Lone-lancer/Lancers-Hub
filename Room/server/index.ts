@@ -15,6 +15,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Add a default route to handle GET requests to "/"
+app.get('/', (req, res) => {
+  res.send('Backend is running! This server only accepts WebSocket connections.');
+});
+
 // Create HTTP and game server
 const server = http.createServer(app);
 const gameServer = new Server({
