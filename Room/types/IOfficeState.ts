@@ -7,7 +7,7 @@ export interface IPlayer extends Schema {
   anim: string
   readyToConnect: boolean
   videoConnected: boolean
-  onChange?: () => void; // Add this property
+  onChange?: (changes: { field: string; value: any }[]) => void; // Updated type
 }
 
 export interface IComputer extends Schema {
