@@ -4,8 +4,8 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
+    "skipLibCheck": true,                     // Skip type checking for library files
+    "esModuleInterop": true,                  // Enable interop with CommonJS modules
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,7 +17,13 @@
     "jsx": "react-jsx",
     "noImplicitAny": false,
     "strictNullChecks": true,
+    "baseUrl": ".",                           // Add base URL for module resolution
+    "paths": {
+      "*": ["node_modules/*"],                // Resolve modules from node_modules
+      "@types/*": ["./types/*"]               // Allow custom type declarations
+    },
+    "typeRoots": ["node_modules/@types", "./types"] // Ensure TypeScript checks these folders
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["src"],                         // Include the src directory
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
