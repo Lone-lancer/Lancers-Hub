@@ -27368,19 +27368,6 @@
          "tilecount":800,
          "tileheight":32,
          "tilewidth":32
-        }, 
-        {
-         "columns":1,
-         "firstgid":5488,
-         "image":"..\/items\/vendingmachine.png",
-         "imageheight":72,
-         "imagewidth":48,
-         "margin":0,
-         "name":"vendingmachine",
-         "spacing":0,
-         "tilecount":1,
-         "tileheight":72,
-         "tilewidth":48
         }],
  "tilewidth":32,
  "type":"map",

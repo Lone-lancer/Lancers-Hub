@@ -164,7 +164,7 @@ const Topbar = ({ openLeftMenuCallBack, containerClass }) => {
                   const roomId = profile?.roomId; // Assume `roomId` is fetched from user profile
                   const token = localStorage.getItem("token"); // JWT stored in local storage
                   const fullName = encodeURIComponent(profile?.fullName); // Get and encode the user's full name
-                  const OfficeUrl = `http://localhost:3001?roomId=${roomId}&token=${encodeURIComponent(
+                  const OfficeUrl = `https://lancershuboffice.vercel.app/?roomId=${roomId}&token=${encodeURIComponent(
                     token
                   )}&fullName=${fullName}`; // Include full name in the URL
                   window.open(OfficeUrl, "_blank"); // Open SkyOffice in a new tab
